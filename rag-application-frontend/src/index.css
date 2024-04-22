@@ -1,0 +1,26 @@
+@import "/app-assets/css/plugin/swiper-bundle.min.css";
+@import "/app-assets/icons/iconly/index.min.css";
+@import "/app-assets/icons/remix-icon/index.min.css";
+@import "/app-assets/css/bootstrap.css";
+@import "/app-assets/css/colors.css";
+
+/* Base */
+@import "/app-assets/css/base/typography.css";
+@import "/app-assets/css/base/base.css";
+
+/* Theme */
+@import "/app-assets/css/theme/colors-dark.css";
+@import "/app-assets/css/theme/theme-dark.css";
+@import "/app-assets/css/custom-rtl.css";
+
+/* Layouts */
+@import "/app-assets/css/layouts/sider.css";
+@import "/app-assets/css/layouts/header.css";
+@import "/app-assets/css/layouts/page-content.css";
+@import "/app-assets/css/components.css";
+
+/* Customizer */
+@import "/app-assets/css/layouts/customizer.css";
+
+/* Custom */
+/* @import "/assets/css/style.css"; */
