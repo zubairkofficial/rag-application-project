@@ -27,65 +27,38 @@ export function Signup() {
                 <div className="row hp-image-row h-100 px-8 px-sm-16 px-md-0 pb-32 pb-sm-0 pt-32 pt-md-0">
                     <div className="hp-logo-item m-16 m-sm-32 m-md-64 w-auto px-0 col-12">
                         <div className="hp-header-logo d-flex align-items-center">
-                            <a href="index.html" className="position-relative">
-                                <div
-                                    className="hp-header-logo-icon position-absolute bg-black-20 hp-bg-dark-90 rounded-circle border border-black-0 hp-border-color-dark-90 d-flex align-items-center justify-content-center"
-                                    style={{ width: 18, height: 18, top: "-5px" }}
-                                >
-                                    <svg
-                                        className="hp-fill-color-dark-0"
-                                        width={12}
-                                        height={12}
-                                        viewBox="0 0 12 12"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M0.709473 0L1.67247 10.8L5.99397 12L10.3267 10.7985L11.2912 0H0.710223H0.709473ZM9.19497 3.5325H4.12647L4.24722 4.88925H9.07497L8.71122 8.95575L5.99397 9.70875L3.28047 8.95575L3.09522 6.87525H4.42497L4.51947 7.93275L5.99472 8.33025L5.99772 8.3295L7.47372 7.93125L7.62672 6.21375H3.03597L2.67897 2.208H9.31422L9.19572 3.5325H9.19497Z"
-                                            fill="#2D3436"
-                                        />
-                                    </svg>
-                                </div>
+                            <Link to="/" className="position-relative">
                                 <img
                                     className="hp-logo hp-sidebar-visible hp-dark-none"
-                                    src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/logo/logo-small.svg"
+                                    src="/logo.png"
                                     alt="logo"
                                 />
                                 <img
                                     className="hp-logo hp-sidebar-visible hp-dark-block"
-                                    src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/logo/logo-small-dark.svg"
+                                    src="/logo.png"
                                     alt="logo"
                                 />
                                 <img
                                     className="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none"
-                                    src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/logo/logo.svg"
+                                    src="/logo.png"
                                     alt="logo"
                                 />
                                 <img
                                     className="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block"
-                                    src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/logo/logo-dark.svg"
+                                    src="/logo.png"
                                     alt="logo"
                                 />
                                 <img
                                     className="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none"
-                                    src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/logo/logo-rtl.svg"
+                                    src="/logo.png"
                                     alt="logo"
                                 />
                                 <img
                                     className="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block"
-                                    src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/logo/logo-rtl-dark.svg"
+                                    src="/logo.png"
                                     alt="logo"
                                 />
-                            </a>
-                            <a
-                                href="https://hypeople-studio.gitbook.io/yoda/change-log"
-                                target="_blank"
-                                className="d-flex"
-                            >
-                                <span className="hp-sidebar-hidden hp-caption fw-normal hp-text-color-primary-1">
-                                    v.3.2
-                                </span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-12 px-0">
@@ -171,7 +144,7 @@ export function Signup() {
                         <div className="mt-48 mt-sm-96 col-12">
                             <p className="hp-p1-body text-center hp-text-color-black-60 mb-8">
                                 {" "}
-                                Copyright 2021 Hypeople LTD.{" "}
+                                Copyright 2024 BACAFIT.{" "}
                             </p>
                             <div className="row align-items-center justify-content-center mx-n8">
                                 <div className="w-auto hp-flex-none px-8 col">
