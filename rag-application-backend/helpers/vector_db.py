@@ -7,7 +7,7 @@ from langchain_community.llms import EmbeddingsChain
 
 def text_to_vector(text, storage_dir='vector-data'):
     # Initialize OpenAI and embeddings chain
-    openai_client = OpenAI(api_key="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")  # Set your OpenAI API key here
+    openai_client = OpenAI(api_key="")  # Set your OpenAI API key here
     embeddings_chain = EmbeddingsChain(model=openai_client)
 
     # Generate embeddings for the text
