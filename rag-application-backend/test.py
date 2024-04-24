@@ -16,15 +16,10 @@
 # random_string = generate_random_string(40)
 # print(random_string)
 
-# from database import Database
-# db = Database()
-# db.insert("user_tokens", {
-#     "token": "abc", 
-#     "user_id": 1
-# })
-# print("Done")
-
-
-from helpers.vector_db import text_to_vector
-
-print(text_to_vector("Aslam Cheema is a web Developer"))
+from database import Database
+db = Database()
+db.insert("user_tokens", {
+    "token": "abc", 
+    "user_id": 1
+})
+print("Done")

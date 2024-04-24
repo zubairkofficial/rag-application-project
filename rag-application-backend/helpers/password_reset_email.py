@@ -39,3 +39,6 @@ def send_password_reset_email(to_address: str, reset_code: str):
     except Exception as e:
         print(f"Failed to send email: {e}")
         return False
+
+# Usage example:
+# send_password_reset_email("recipient-email@example.com", "1234")
