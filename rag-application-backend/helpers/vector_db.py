@@ -1,30 +1,34 @@
-from langchain.openai import OpenAIEmbedder
-from langchain.schema import Vector
-from langchain.charoma import CharomaDb
-import openai
+import faiss
+import uuid
+import os
+import numpy as np
+from langchain import OpenAI
+from langchain_community.llms import EmbeddingsChain
 
-# Initialize OpenAI API (make sure to set your API key)
-openai.api_key = 'your-openai-api-key'
+def text_to_vector(text, storage_dir='vector-data'):
+    # Initialize OpenAI and embeddings chain
+    openai_client = OpenAI(api_key="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")  # Set your OpenAI API key here
+    embeddings_chain = EmbeddingsChain(model=openai_client)
 
-# Initialize the OpenAI Embedder with a specific model
-embedder = OpenAIEmbedder(model="text-embedding-ada-002")
+    # Generate embeddings for the text
+    embeddings = embeddings_chain.run(text)
 
-# Initialize Charoma Db (assuming it's a hypothetical database for vectors)
-charoma_db = CharomaDb(database_url="your-database-url")
+    # Convert embeddings list to a numpy array (if necessary)
+    vector = np.array(embeddings).astype('float32')
 
-def text_to_vector_db(text):
-    # Generate vector embedding from the text
-    embedding = embedder.embed_text(text)
-    
-    # Create a Vector object (assuming this is the required format for Charoma Db)
-    vector = Vector(values=embedding, metadata={"original_text": text})
-    
-    # Store the vector in Charoma Db
-    charoma_db.store_vector(vector)
-    
-    return "Vector stored successfully!"
+    # Create a FAISS index (Flat index for simplicity in this example)
+    dimension = vector.shape[1]  # Dimension of the embeddings
+    index = faiss.IndexFlatL2(dimension)
+    index.add(vector.reshape(1, -1))  # Reshape vector to match FAISS requirements
 
-# Example usage
-text = "Example text to convert into vector and store in the database."
-result = text_to_vector_db(text)
-print(result)
+    # Generate a unique filename with UUID
+    file_name = f"{uuid.uuid4()}.faiss"
+    file_path = os.path.join(storage_dir, file_name)
+
+    # Ensure the storage directory exists
+    os.makedirs(storage_dir, exist_ok=True)
+
+    # Save the index
+    faiss.write_index(index, file_path)
+
+    return file_path
