@@ -2,7 +2,7 @@ import faiss
 import uuid
 import os
 import numpy as np
-from langchain import OpenAI
+from langchain_community.llms import OpenAI
 from langchain_community.llms import EmbeddingsChain
 from api_keys import OPENAI_API_KEY
 
